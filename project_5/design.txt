@@ -1,0 +1,26 @@
+
+
+Alrighty so I aimed to be able to effectivly collect, search through, and store information
+about actors, there movies, and there roles. The main data structures I used for this where 3 hashtables
+each of them designed to hold there respective titles. To deal with collisions, I first used vectors,
+the reason why I did this is to lighten my load a little. vectors are basiclly a linked list, this makes it easier because
+I didn't have to go out and write my own. The reason I used them is because say that theres are 2 Ids that when going through
+my hashfunction end up with the same value, this is bound to happen because of how large our dataset is, the linked list allows
+for multiple values to be stored in one hashset, and then when we want to get a value we can just go into the linked list and
+pull it out, keeping the other value in there. As for the 3 hashtables n storing into the MovieHashTable, the hash function generates an index
+employing the ASCII value of the characters within the title of the movie such that the spread will be even across the table to prevent collisions.
+Vectors also help with memory management 
+The ActorHashTable operates in the same way but retains data about actors, such as their name, ID (unique identifier), birth year, and death year if
+they are deceased. It applies a slightly different hashing algorithm, using a prime multiplier to minimize clustering, but otherwise adheres to the same
+general hash-chaining concept as the movie table. The RoleHashTable connects actor IDs to an array of movie IDs in which they have worked,
+allowing the program to track the relationships between actors and films that they have acted in. To facilitate lookups of film titles from movie
+IDs (since the role information connects actors to films only through ID)
+The movie, actor, and role files are each loaded separately through three specialized functions. Each of these functions reads a
+tab-separated value (.tsv) file, pulls out the necessary fields, and puts the data in the correct format before inserting it into their
+respective hash tables. There are some special considerations in parsing these files: missing numeric fields indicated by "\\\\N" are substituted by -1,
+The hash functions are deliberately kept simple to prioritize speed over sophistication as the goal wasn't to devise optimal uniform distribution
+but quick indexing that still to some extent avoids clustering. Both actor and movie hash functions are a question of adding ASCII values
+A cool hash that RoleHashtable uses is called "djb2" hashing algorithm, since from what I saw on the files it is the largest. 
+The auxiliary unordered_map movieIdToTitleMap is particularly useful in role lookups because otherwise the program would have to look through the
+MovieHashTable again, which would be slower and uglier
+Overall the design was ment to be fast and not super duper slow, which I think I did well, 

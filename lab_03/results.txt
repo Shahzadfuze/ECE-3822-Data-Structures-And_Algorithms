@@ -1,0 +1,22 @@
+What each filter does
+
+
+Output_01:
+	What I am guessing this filter does is it is a low pass filter because
+	the noisy data has a peak to peak of 1 and -1 well the filter data has
+	a peak to peak of around 0.45 to -0.45.
+
+Output_02:
+	Now this one seems a little more interesting because, it keeps some of the
+	noise compared to the previous filter that made it an almost perfect sin wave
+	as well as at the end peaks up a little more than the previous. I have to
+	guess it is another low pass filter but worse because of the noise. So
+	maybe a high pass filter. But that would explain the peak being the same
+	as the previous filter
+
+Output_03:
+	My only guess could be something called a bandpass filter. Which only allows
+	a set frequency to go through and rejects others. Which might be whats going on with this
+	signal like its keeping a consistant line right above 0.2 almost never going below that
+	and allowing the higher freqs to go through untouched. That is just a guess though and
+	I am not entirely sure. 

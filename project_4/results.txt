@@ -1,0 +1,10 @@
+Severity 1: Average Wait Time = 365.06 minutes
+Severity 2: Average Wait Time = 30.84 minutes
+Severity 3: Average Wait Time = 20.02 minutes
+Severity 4: Average Wait Time = 10.16 minutes
+Severity 5: Average Wait Time = 5.44 minutes
+Severity 6: Average Wait Time = 4.25 minutes
+Severity 7: Average Wait Time = 3.32 minutes
+Severity 8: Average Wait Time = 4.32 minutes
+Severity 9: Average Wait Time = 2.68 minutes
+Severity 10: Average Wait Time = 1.93 minutes
